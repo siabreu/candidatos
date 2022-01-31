@@ -1,14 +1,45 @@
 <p style="color: green"><%= notice %></p>
 
+<% if @prospects.empty? %>
+  <h3>No prospects registered</h3>
+<% end %>
+
 <h1>Prospects</h1>
 
-<div id="prospects">
-  <% @prospects.each do |prospect| %>
-    <%= render prospect %>
-    <p>
-      <%= link_to "Show this prospect", prospect %>
-    </p>
-  <% end %>
-</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Grupo - Nome do Grupo</th>
+      <th>Cpf</th>
+      <th>Telefone</th>
+      <th>Data de Nascimento</th>
+      <th>Endereço</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <!-- <div id="prospects"> -->
+    <% @prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.name %> </td>
+        <td><%= prospect.email %> </td>
+        <td><%= prospect.group %> -<%= prospect.group_name %> </td>
+        <td><%= prospect.cpf %> </td>
+        <td><%= prospect.phone %> </td>
+        <td><%= prospect.birth_date %> </td>
+        <td><%= prospect.address %> </td>
+        <td><%= link_to "Show", prospect %> </td>
+        <td><%= link_to "Edit", edit_prospect_path(prospect) %> </td>
+        <td><%= link_to "Destroy", prospect, method: :delete, data: {confirm: 'Are you sure?' } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to "New prospect", new_prospect_path %>
