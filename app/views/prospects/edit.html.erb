@@ -1,10 +1,10 @@
-<h1>Editing prospect</h1>
-
-<%= render "form", prospect: @prospect %>
-
-<br>
-
-<div>
-  <%= link_to "Show this prospect", @prospect %> |
-  <%= link_to "Back to prospects", prospects_path %>
+<div class="col-lg-8 max-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h1>Edit prospect</h1>
+    </div>
+    <div class="card-body">
+      <%= render "form", prospect: @prospect %>
+    </div>
+  </div>
 </div>

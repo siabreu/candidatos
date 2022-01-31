@@ -1,45 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<% if @prospects.empty? %>
-  <h3>No prospects registered</h3>
-<% end %>
-
-<h1>Prospects</h1>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>E-mail</th>
-      <th>Grupo - Nome do Grupo</th>
-      <th>Cpf</th>
-      <th>Telefone</th>
-      <th>Data de Nascimento</th>
-      <th>Endereço</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-   <!-- <div id="prospects"> -->
-    <% @prospects.each do |prospect| %>
-      <tr>
-        <td><%= prospect.name %> </td>
-        <td><%= prospect.email %> </td>
-        <td><%= prospect.group %> -<%= prospect.group_name %> </td>
-        <td><%= prospect.cpf %> </td>
-        <td><%= prospect.phone %> </td>
-        <td><%= prospect.birth_date %> </td>
-        <td><%= prospect.address %> </td>
-        <td><%= link_to "Show", prospect %> </td>
-        <td><%= link_to "Edit", edit_prospect_path(prospect) %> </td>
-        <td><%= link_to "Destroy", prospect, method: :delete, data: {confirm: 'Are you sure?' } %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="col-lg-8 max-auto">
+  <h1>Prospects</h1>
+  <%= link_to "New prospect", new_prospect_path, class: "btn btn-primary btn-lg mb-3"  %>
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <% if @prospects.empty? %>
+      <h3>No prospects registered</h3>
+      <% end %>
+      <% @prospects.each do |prospect| %>
+        <dl>
+          <dt>Nome</dt>
+          <dd><%= prospect.name %> </dd>
+          <dt>E-mail</dt>
+          <dd><%= prospect.email %> </dd>
+          <dt>Grupo/Nome</dt>
+          <dd><%= prospect.group %> -<%= prospect.group_name %> </dd>
+          <dt>Cpf</dt>
+          <dd><%= prospect.cpf %> </dd>
+          <dt>Telefone</dt>
+          <dd><%= prospect.phone %> </dd>
+          <dt>Data de Nascimento</dt>
+          <dd><%= prospect.birth_date %> </dd>
+          <dt>Endereço</dt>
+          <dd><%= prospect.address %> </dd>
+          <%= link_to "Show", prospect, class: "btn btn-primary" %> 
+          <%= link_to "Edit", edit_prospect_path(prospect), class: "btn btn-primary" %>
+          <%= link_to "Destroy", prospect, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary" %> </dd>
+        </dl>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <br>
-
-<%= link_to "New prospect", new_prospect_path %>

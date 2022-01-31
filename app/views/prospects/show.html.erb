@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @prospect %>
-
-<div>
-  <%= link_to "Edit this prospect", edit_prospect_path(@prospect) %> |
-  <%= link_to "Back to prospects", prospects_path %>
-
-  <%= button_to "Destroy this prospect", @prospect, method: :delete %>
+<div class="col-lg-8 max-auto">
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <%= render @prospect %>
+    </div>
+  </div>
+  <div class="mt-3">
+    <%= link_to "Edit", edit_prospect_path(@prospect), class: "btn btn-warning " %> | 
+    <%= link_to "Back to prospects", prospects_path, class: "btn btn-outline-primary" %>
+    <br>
+    <%= button_to "Destroy", @prospect, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
