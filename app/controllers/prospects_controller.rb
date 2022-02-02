@@ -1,25 +1,38 @@
 class ProspectsController < ApplicationController
   before_action :set_prospect, only: %i[ show edit update destroy ]
 
-  # GET /prospects or /prospects.json
   def index
     @prospects = Prospect.all
   end
 
-  # GET /prospects/1 or /prospects/1.json
+  # def data
+  # end
+
+  # def import_file
+  #   binding.pry
+  #   puts 'arquivo importado'
+  #   binding.pry
+  #   file = prospect_params[:file]
+  #   # csv = File.join Rails.root, 'db', 'new_prospects.csv'
+  #   # AddProspectWorker.perform_async(csv)
+  #   # redirect_to prospects_data_path, notice: 'New'
+  # end
+
+  # def destroy_data
+  #   RemoveProspectWorker.perform_async
+  #   redirect_to root_path
+  # end
+
   def show
   end
 
-  # GET /prospects/new
   def new
     @prospect = Prospect.new
   end
 
-  # GET /prospects/1/edit
   def edit
   end
 
-  # POST /prospects or /prospects.json
   def create
     @prospect = Prospect.new(prospect_params)
 
@@ -34,7 +47,6 @@ class ProspectsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /prospects/1 or /prospects/1.json
   def update
     respond_to do |format|
       if @prospect.update(prospect_params)
@@ -47,7 +59,6 @@ class ProspectsController < ApplicationController
     end
   end
 
-  # DELETE /prospects/1 or /prospects/1.json
   def destroy
     @prospect.destroy
 
@@ -58,12 +69,10 @@ class ProspectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_prospect
       @prospect = Prospect.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def prospect_params
       params.require(:prospect).permit(:name, :email, :group, :group_name, :cpf, :phone, :birth_date, :address)
     end
