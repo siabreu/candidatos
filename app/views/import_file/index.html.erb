@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="col-lg-8 max-auto">
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <h3>Import Prospect File</h3>
+
+      <%= form_tag(import_file_import_path, method: :post, multipart: true) do %>
+        <%= label_tag :file %>
+        <%= file_field_tag :file, name: "file" %>
+        <%= submit_tag "Submit", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>
