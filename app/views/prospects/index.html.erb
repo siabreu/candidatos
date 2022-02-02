@@ -2,7 +2,9 @@
 
 <div class="col-lg-8 max-auto">
   <h1>Prospects</h1>
-  <%= link_to "New prospect", new_prospect_path, class: "btn btn-primary btn-lg mb-3"  %>
+
+  <%= link_to "Import", import_file_path, class: "btn btn-primary btn-lg mb-3" %>
+  <%= link_to "New prospect", new_prospect_path, class: "btn btn-primary btn-lg mb-3" %>
   <div class="card shadow mb-3">
     <div class="card-body">
       <% if @prospects.empty? %>
