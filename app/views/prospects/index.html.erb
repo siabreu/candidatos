@@ -12,20 +12,7 @@
       <% end %>
       <% @prospects.each do |prospect| %>
         <dl>
-          <dt>Nome</dt>
-          <dd><%= prospect.name %> </dd>
-          <dt>E-mail</dt>
-          <dd><%= prospect.email %> </dd>
-          <dt>Grupo/Nome</dt>
-          <dd><%= prospect.group %> -<%= prospect.group_name %> </dd>
-          <dt>Cpf</dt>
-          <dd><%= prospect.cpf %> </dd>
-          <dt>Telefone</dt>
-          <dd><%= prospect.phone %> </dd>
-          <dt>Data de Nascimento</dt>
-          <dd><%= prospect.birth_date %> </dd>
-          <dt>Endereço</dt>
-          <dd><%= prospect.address %> </dd>
+          <dt>Nome: <%= prospect.name %>  | Cpf: <%= prospect.cpf %> </dt>
           <%= link_to "Show", prospect, class: "btn btn-primary" %> 
           <%= link_to "Edit", edit_prospect_path(prospect), class: "btn btn-primary" %>
           <%= link_to "Destroy", prospect, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary" %> </dd>
