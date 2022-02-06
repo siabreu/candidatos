@@ -5,7 +5,7 @@
     <div class="card-body">
       <h3>Import Prospect File</h3>
 
-      <%= form_tag(import_file_import_path, method: :post, multipart: true) do %>
+      <%= form_tag(import_file_import_path, method: :post, enctype: 'multipart/form-data') do %>
         <%= label_tag :file %>
         <%= file_field_tag :file, name: "file" %>
         <%= submit_tag "Submit", class: "btn btn-primary"%>
