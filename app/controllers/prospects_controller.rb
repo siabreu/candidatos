@@ -5,24 +5,6 @@ class ProspectsController < ApplicationController
     @prospects = Prospect.all
   end
 
-  # def data
-  # end
-
-  # def import_file
-  #   binding.pry
-  #   puts 'arquivo importado'
-  #   binding.pry
-  #   file = prospect_params[:file]
-  #   # csv = File.join Rails.root, 'db', 'new_prospects.csv'
-  #   # AddProspectWorker.perform_async(csv)
-  #   # redirect_to prospects_data_path, notice: 'New'
-  # end
-
-  # def destroy_data
-  #   RemoveProspectWorker.perform_async
-  #   redirect_to root_path
-  # end
-
   def show
   end
 
