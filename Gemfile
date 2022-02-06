@@ -43,6 +43,11 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'sidekiq', '~>6.0.0'
 
+gem 'pry'
+gem 'pry-byebug'
+
+gem 'spreadsheet', '~> 1.3'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
