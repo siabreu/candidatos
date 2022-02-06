@@ -46,7 +46,7 @@ gem 'sidekiq', '~>6.0.0'
 gem 'pry'
 gem 'pry-byebug'
 
-gem 'spreadsheet', '~> 1.3'
+gem "roo", "~> 2.8.0"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
